@@ -3,6 +3,8 @@ var path = require('path');
 var url = require('url');
 var fs = require('fs');
 
+var portno = 8888;
+
 http.createServer(function(request, response) {
 	var pathname = decodeURI(url.parse(request.url).pathname);
 
@@ -51,6 +53,6 @@ http.createServer(function(request, response) {
 	response.write('404 Not Found\n');
 	response.end();
 
-}).listen(8888);
+}).listen(portno);
 
-console.log('Server running');
+console.log('Server running port:'+portno);
