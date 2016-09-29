@@ -1,17 +1,41 @@
-/*Shinhan-Invest-Front-End-Framework(2016.03.28|강환기)*/
-app && function(w){
-var C={C:'background:#e00;color:#fff',S:'background:#00e;color:#fff',F:'background:#090;color:#fff'},
-fw={A:{},APP:{},C:{},E:[],F:[],H:{},P:{},N:{},S:{}},si={};
-_.each(['st','logging','root','syscode','filetype','layoutcode','path'],function(v,k){fw.A[v]=w['app'][k]});
-_.each(fw.A,function(v,k){fw.APP[k]=function(){return v}});
-si.version='1.0',
-si.app=fw.APP,
-si.browser=function(){
-	var m=document.documentMode,a=navigator.userAgent,
-	b=_.find({'Chrome/':'C','Safari/':'S','Firefox/':'F','OPR':'O','Opera':'O','Trident/':'I','MSIE':'I'},function(x,y){return a.indexOf(y)>-1})||'N',
-	v=_.find({'Trident/4.0':8,'Trident/5.0':9,'Trident/6.0':10,'Trident/7.0':11},function(x,y){return a.indexOf(y)>-1})||7;
-	return b=='I'?(m?['I',v,m]:['I',7,7]):[b,99,99]
-}(),
+/*
+underwear-knockout
+2016.09.29
+im-onesix
+*/
+function(w){
+
+var _w={};
+var fw={};
+
+_w.version='0.1';
+
+_w.browser=function(){
+	var m=document.documentMode;
+	var a=navigator.userAgent;
+	var b=_.find({
+		'Chrome/':'C',
+		'Safari/':'S',
+		'Firefox/':'F',
+		'OPR':'O',
+		'Opera':'O',
+		'Trident/':'I',
+		'MSIE':'I'
+	},function(x,y){
+		return a.indexOf(y)>-1
+	})||'N';
+	var v=_.find({
+		'Trident/4.0':8,
+		'Trident/5.0':9,
+		'Trident/6.0':10,
+		'Trident/7.0':11
+	},function(x,y){
+		return a.indexOf(y)>-1
+	})||7;
+
+	return b=='I'?(m?['I',v,m]:['I',7,7]):[b,99,99];
+}();
+
 si.component=function(n,f){_addN(n,f)},
 si.config=function(f){_addF(f)},
 si.controller=function(n,f){_addC(n,f)},
@@ -20,7 +44,7 @@ si.main=function(f){_addC('main',f)},
 si.provider=function(n,f){_addP(n,f)},
 si.run=function(f){_run(f)},
 si.service=function(n,f){_addS(n,f)},
-si.error=function(f){_addE(f)},
+
 si.util={uri:uri,load:load};
 w.si=si,w.app=null,w.log=logger('app');
 //
@@ -137,5 +161,4 @@ function out(e){return e.outerHTML||(function(n){
 	return d.appendChild(n),h=d.innerHTML,d=null,h;
 })(e)}
 
-w.log('si-init...');
 }(window);
