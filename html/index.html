@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fw-knockout</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="/app/lib/jquery-1.12.4.min.js"></script>
+	<script src="/app/lib/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+
+	<link href="/app/lib/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/app/common/common.css" rel="stylesheet">
+</head>
+
+<body>
+	<!-- view-top -->
+	<div id="view-top">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" onclick="showMenu()">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Bootstrap theme</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">메뉴1</a></li>
+						<li><a href="#about">메뉴2</a></li>
+						<li><a href="#contact">메뉴3</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<!-- view-content -->
+	<div id="view-content" class="container">
+		<div class="jumbotron">
+			<h1>Theme example</h1>
+			<p>This is a template showcasing the optional theme stylesheet included in Bootstrap. Use it as a starting point to create something more unique by building on or modifying it.</p>
+		</div>
+		
+	</div>
+
+	<!-- view-bottom -->
+	<footer id="view-bottom" class="bs-docs-footer"></footer>
+
+	<!-- Modal-dialog -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+
+				<div class="modal-body">
+					<div class="list-group">
+						<a href="#" class="list-group-item active">메뉴1</a>
+						<a href="#" class="list-group-item">메뉴2</a>
+						<a href="#" class="list-group-item">메뉴3</a>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript">
+	function showMenu() {
+		$('#myModal').modal('show');
+	}
+
+	$('#myModal').on('hidden.bs.modal', function (e) {
+		console.log(e);
+	});
+</script>
+
+</body>
+</html>
