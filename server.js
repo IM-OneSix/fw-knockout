@@ -8,11 +8,11 @@ var portno = 8888;
 http.createServer(function(request, response) {
 	var pathname = decodeURI(url.parse(request.url).pathname);
 
-	console.log(pathname);
-
 	if(!pathname||pathname=='/'){
 		pathname = '/index.html'
 	}
+
+	console.log(pathname);
 
 	var fullpath = path.join(process.cwd(), pathname);
 	var ext = pathname.split('.');
