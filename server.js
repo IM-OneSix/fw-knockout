@@ -4,9 +4,12 @@ var url = require('url');
 var fs = require('fs');
 
 var portno = 8888;
+var webroot = '/fw-knockout/';
 
 http.createServer(function(request, response) {
 	var pathname = decodeURI(url.parse(request.url).pathname);
+
+    pathname = pathname.replace(webroot,'/');
 
 	if(!pathname||pathname=='/'){
 		pathname = '/index.html'
