@@ -1,9 +1,5 @@
-/*
-underwear-knockout
-2016.09.29
-im-onesix
-*/
-function(w){
+/* underwear-knockout[2016.09.29] */
+(function(w){
 var _w={
 	version:'0.1',
 	browser:function(){
@@ -43,6 +39,8 @@ _service={},
 _controller={}
 _R={};
 
+w._w=_w;
+
 function addHandler(name,func){_handler[name]=func}
 function addComponent(name,func){_component[name]=func}
 function addConfig(func){_config.push(func)}
@@ -77,14 +75,14 @@ function run(func){
 	_.each(_handler,function(v,k){ko.bindingHandlers[k]=v(svc())});
 	_.each(_component,function(v,k){ko.components.register(k,v(svc()))});
 
-	func(_R,svc());
+	func&&func(_R,svc());
 
 	if($('[data-view]').length&&_controller['main']){
 		bindHtml('main',$('[data-view]')[0]);
 		loadController('main',{});
 	}
 
-	ko.applyBindings(fw.R,$('body')[0]);
+	ko.applyBindings(_R,$('body')[0]);
 }
 
 //
@@ -118,4 +116,4 @@ function removeController(name){
 
 function error(message){throw new Error(message)}
 
-}(window);
+})(window);
