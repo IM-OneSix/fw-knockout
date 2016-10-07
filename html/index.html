@@ -54,12 +54,13 @@
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">레이어 팝업</h3>
+				<h3 class="panel-title">팝업</h3>
 			</div>
 			<div class="panel-body">
-				<button class="btn btn-primary" onclick="showModal()">defult</button>
-				<button class="btn btn-primary">alert</button>		
+				<button class="btn btn-primary" onclick="showModal()">레이어팝업</button>
+				<button class="btn btn-primary">alert</button>
 				<button class="btn btn-primary">confirm</button>
+				<button class="btn btn-primary">윈도우팝업</button>
 			</div>
 		</div>
 
@@ -289,7 +290,7 @@
 	</footer>
 
 	<!-- Modal-dialog -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
